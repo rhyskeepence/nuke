@@ -1,0 +1,17 @@
+Nuke is a utility to aggregate snoggin data that is older than a particular date, reducing the size of the database.
+
+Snoggin metrics are stored in 10 second intervals. For each day past the cutoff, this tool will insert an average of that day's data, and remove the 10 second data.
+
+Usage
+=====
+
+java -jar nuke.jar [mongo host] [mongo port] [mongo user] [mongo password] [number of days to keep]
+
+(If your database has no username or password, use "")
+
+Building
+========
+
+run `sbt assembly`
+
+This will produce target/nuke-assembly-0.1-SNAPSHOT.jar, which can be renamed to nuke.jar for clarity.
